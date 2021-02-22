@@ -235,16 +235,16 @@ public class ProblemSet11 {
             int count = 0;
 
             for (int i = 0; i <= firstList; i++) {
-                for (int z = 0; z <= firstList; z++) {
-                    if (i == 0 || z == 0) {
-                        LCSuff[i][z] = 0;
+                for (int k = 0; k <= firstList; k++) {
+                    if (i == 0 || k == 0) {
+                        LCSuff[i][k] = 0;
                     }
-                    else if (numbers.get(i - 1).equals(numbers.get(firstList - z))) {
-                        LCSuff[i][z] = LCSuff[i-1][z-1] + 1;
-                        count = Math.max(count, LCSuff[i][z]);
+                    else if (numbers.get(i - 1).equals(numbers.get(firstList - k))) {
+                        LCSuff[i][k] = LCSuff[i - 1][k - 1] + 1;
+                        count = Math.max(count, LCSuff[i][k]);
                     }
                     else {
-                        LCSuff[i][z] = 0;
+                        LCSuff[i][k] = 0;
                     }
                 }
             }
